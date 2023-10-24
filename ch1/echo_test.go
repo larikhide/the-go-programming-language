@@ -1,4 +1,4 @@
-package echo
+package ch1
 
 import (
 	"bytes"
