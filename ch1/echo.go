@@ -1,6 +1,7 @@
 package ch1
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"strings"
@@ -40,4 +41,15 @@ func echo6() {
 		strBuilder.WriteString(v)
 	}
 	fmt.Println(strBuilder.String())
+}
+
+func echo7() {
+	n := flag.Bool("n", false, "skip newline")
+	sep := flag.String("s", " ", "separator")
+
+	flag.Parse()
+	fmt.Println(strings.Join(flag.Args(), *sep))
+	if !*n {
+		fmt.Println()
+	}
 }
